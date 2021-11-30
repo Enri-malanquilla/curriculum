@@ -12,6 +12,23 @@ app.use(express.json());
 app.use(fileupload());
 
 /*
+ENDPOINT USUARIO
+*/
+const getUsuario = require('./controllers/usuario/getUsuario');
+
+app.get('/usuario', getUsuario);
+
+// ENDPOINT DATOS
+
+const experiencia = require('./controllers/datos/experiencia');
+const estudios = require('./controllers/datos/estudios');
+const otros = require('./controllers/datos/otros');
+
+app.get('/experiencia', experiencia);
+app.get('/estudios', estudios);
+app.get('/otros', otros);
+
+/*
 ##############################
 #### MIDDLEWARE DE ERRORES####
 ##############################
