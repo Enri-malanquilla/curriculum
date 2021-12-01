@@ -91,17 +91,19 @@ main {
 .cuadroInstituciones {
   border-top: none;
   display: flex;
-  flex-direction: column;
+  justify-content: space-around;
+  align-items: stretch;
 }
 
 .cuadroInstituciones div {
-  display: flex;
-  justify-content: space-around;
+  border: 1px solid red;
 }
 
 .cuadroInstituciones article {
   max-height: 20rem;
   max-width: 10rem;
+  display: flex;
+  flex-direction: column;
 }
 
 .cuadroEstudio img {

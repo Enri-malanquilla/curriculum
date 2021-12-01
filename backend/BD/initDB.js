@@ -75,6 +75,7 @@ async function main() {
         id INT PRIMARY KEY AUTO_INCREMENT,
         idEmpresa INT NOT NULL,
         FOREIGN KEY (idEmpresa) REFERENCES instituciones(id),
+        titulo VARCHAR(150) NOT NULL,
         nota INT,
         apto BOOLEAN DEFAULT true NOT NULL,
         temario TEXT
@@ -169,9 +170,10 @@ async function main() {
       console.log('Creado experiencia');
 
       await connection.query(`
-        INSERT INTO estudios (idEmpresa, nota, temario)
+        INSERT INTO estudios (idEmpresa, titulo, nota, temario)
         VALUES (
             "${i}",
+            "titulos en lo que sea",
             "${nota}",
             "${descripcion}"
         )
